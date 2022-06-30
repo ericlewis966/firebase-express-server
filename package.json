@@ -1,0 +1,25 @@
+{
+  "name": "firebase-functions-express-example",
+  "version": "1.0.0",
+  "description": "Express server running on Cloud Functions for Firebase",
+  "license": "MIT",
+  "author": "<jthegedus@jttech.io>",
+  "repository":
+    "https://github.com/jthegedus/firebase-functions-express-example.git",
+  "scripts": {
+    "postinstall": "cd functions && yarn",
+    "precommit": "lint-staged",
+    "deploy": "firebase deploy",
+    "format": "prettier --write \"**/**{.js, .json}\" && sort-package-json",
+    "serve": "firebase serve --only functions"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.7.0",
+    "sort-package-json": "^1.7.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  }
+}
